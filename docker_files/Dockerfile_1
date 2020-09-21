@@ -1,0 +1,11 @@
+FROM obiwan_dr9:1.0
+
+ADD . /src
+
+RUN yes | apt-get install gettext 
+
+RUN yes | apt-get install texinfo 
+#RUN apt-get update && apt-get remove libc6 
+RUN cd gawk-5.1.0 && ./configure && make && make install
+
+#RUN ./glibc-2.25/configure --prefix=/usr && cd glibc-2.25 && make && make install
